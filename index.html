@@ -120,6 +120,7 @@
     save(); renderLists();
     likeBtn.setAttribute("aria-pressed", value === "up" ? "true" : "false");
     dislikeBtn.setAttribute("aria-pressed", value === "down" ? "true" : "false");
+	showNext();
   }
   likeBtn.addEventListener("click", () => vote("up"));
   dislikeBtn.addEventListener("click", () => vote("down"));
