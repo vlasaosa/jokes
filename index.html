@@ -19,12 +19,10 @@
     #jokeBox { min-height:170px; display:grid; place-items:center; text-align:center; padding:20px 8px;
       font-size:clamp(1.35rem,4.5vw,2rem); line-height:1.45; }
     #jokeBox.final { font-style:italic; font-size:clamp(1.25rem,4vw,1.7rem); }
-    .actions { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:18px; }
     button { border:0; border-radius:999px; padding:13px 20px; font:600 15px system-ui,sans-serif; cursor:pointer; transition:transform .15s,opacity .15s; }
     button:hover:not(:disabled) { transform:translateY(-2px); }
     button:focus-visible { outline:3px solid #d39a70; outline-offset:3px; }
     button:disabled { opacity:.42; cursor:not-allowed; }
-    #nextBtn { background:var(--accent); color:white; padding-inline:25px; }
     .vote { background:#f0e4d7; color:var(--ink); min-width:54px; font-size:19px; }
     .vote[aria-pressed="true"] { background:#d9eadb; box-shadow:inset 0 0 0 2px #648c69; }
     .vote.down[aria-pressed="true"] { background:#f4dddd; box-shadow:inset 0 0 0 2px #b56a6a; }
@@ -47,9 +45,6 @@
   <h1>Vamos a pasar un buen rato</h1>
   <section class="card" aria-live="polite">
     <div id="jokeBox">Cargando chistes…</div>
-    <div class="actions">
-      <button id="nextBtn" type="button">Otro chiste, por favor</button>
-    </div>
     <div class="vote-row" id="voteRow">
       <span class="vote-label">¿Te ha gustado?</span>
       <button class="vote" id="likeBtn" type="button" aria-label="Me ha gustado" aria-pressed="false">👍</button>
@@ -66,7 +61,6 @@
 (() => {
   const STORAGE_KEY = "buen-rato-chistes-v1";
   const box = document.getElementById("jokeBox");
-  const nextBtn = document.getElementById("nextBtn");
   const likeBtn = document.getElementById("likeBtn");
   const dislikeBtn = document.getElementById("dislikeBtn");
   const voteRow = document.getElementById("voteRow");
@@ -103,8 +97,6 @@
     state.finished = true; save();
     box.textContent = "Espero que te hayan sacado alguna sonrisa, besitos";
     box.classList.add("final");
-    nextBtn.disabled = true; likeBtn.disabled = true; dislikeBtn.disabled = true;
-    nextBtn.textContent = "Se acabaron los chistes";
   }
   function showNext() {
     if (state.finished) return;
@@ -129,7 +121,6 @@
     likeBtn.setAttribute("aria-pressed", value === "up" ? "true" : "false");
     dislikeBtn.setAttribute("aria-pressed", value === "down" ? "true" : "false");
   }
-  nextBtn.addEventListener("click", showNext);
   likeBtn.addEventListener("click", () => vote("up"));
   dislikeBtn.addEventListener("click", () => vote("down"));
 
@@ -147,7 +138,6 @@
       const p = document.createElement("p"); p.className = "error";
       p.textContent = "No se ha podido cargar el banco de chistes. Comprueba que jokes.json esté junto a index.html y que la página esté publicada en un servidor web.";
       box.appendChild(p);
-      nextBtn.disabled = true; likeBtn.disabled = true; dislikeBtn.disabled = true;
       console.error(err);
     });
 })();
