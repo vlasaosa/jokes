@@ -1,27 +1,31 @@
 [
   {
-    "id": "chiste-001",
+    "id": "chiste-000",
     "text": "¿Qué hace una abeja en el gimnasio? ¡Zum-ba!"
   },
   {
+    "id": "chiste-001",
+    "text": "¿Cuál es el colmo de Aladdín? Tener mal genio."
+  },
+  {
     "id": "chiste-002",
-    "text": "¿Qué le dice un techo a otro? Techo de menos."
+    "text": "¿Qué le dice un jaguar a otro jaguar? Jaguar you?"
   },
   {
     "id": "chiste-003",
-    "text": "¿Por qué estaba feliz el libro de matemáticas? Porque tenía muchos problemas… ¡resueltos!"
+    "text": "¿Cómo se llama el campeón de buceo japonés? Tokofondo."
   },
   {
     "id": "chiste-004",
-    "text": "¿Qué hace una vaca cuando sale el sol? Sombra."
+    "text": "¿Y el subcampeón? Kasitoko."
   },
   {
     "id": "chiste-005",
-    "text": "¿Cuál es el colmo de un jardinero? Que siempre lo dejen plantado."
+    "text": "¿Qué hace un perro con un taladro? Taladrando."
   },
   {
     "id": "chiste-006",
-    "text": "—¿Nivel de inglés? —Alto. —Traduzca «mirar». —Look. —Úselo en una frase. —Luke, yo soy tu padre."
+    "text": "¿Cómo se despiden los químicos? Ácido un placer."
   },
   {
     "id": "chiste-007",
@@ -29,54 +33,370 @@
   },
   {
     "id": "chiste-008",
-    "text": "¿Por qué los pájaros no usan Facebook? Porque ya tienen Twitter."
+    "text": "¿Cuál es el café más peligroso del mundo? El ex-preso."
   },
   {
     "id": "chiste-009",
-    "text": "—Camarero, este filete tiene muchos nervios. —Normal, es la primera vez que se lo comen."
+    "text": "¿Qué le dice un techo a otro? Techo de menos."
   },
   {
     "id": "chiste-010",
-    "text": "¿Qué hace una caja en el gimnasio? ¡Caja fuerte!"
+    "text": "¿Por qué lloraba el libro de matemáticas? Porque tenía muchos problemas."
   },
   {
     "id": "chiste-011",
-    "text": "¿Cómo se despiden los químicos? Ácido un placer."
+    "text": "¿Qué hace una vaca cuando sale el sol? Sombra."
   },
   {
     "id": "chiste-012",
-    "text": "¿Qué le dice un semáforo a otro? No me mires, que me estoy cambiando."
-  },
-  {
-    "id": "chiste-013",
-    "text": "¿Qué le dijo el cero al ocho? ¡Bonito cinturón!"
-  },
-  {
-    "id": "chiste-014",
     "text": "¿Cuál es el animal más antiguo? La cebra, porque está en blanco y negro."
   },
   {
+    "id": "chiste-013",
+    "text": "¿Qué le dice un pez a otro? ¡Nada!"
+  },
+  {
+    "id": "chiste-014",
+    "text": "¿Cómo se dice pañuelo en japonés? Saka-moko."
+  },
+  {
     "id": "chiste-015",
-    "text": "—Doctor, me siento invisible. —¿Quién ha dicho eso?"
+    "text": "¿Qué le dice la foca a su madre? I love you, mother foca."
   },
   {
     "id": "chiste-016",
-    "text": "¿Por qué el ordenador fue al médico? Porque tenía un virus."
+    "text": "¿Cuál es el colmo de un electricista? Que su esposa se llame Luz y sus hijos le sigan la corriente."
   },
   {
     "id": "chiste-017",
-    "text": "¿Qué hace un pez? ¡Nada!"
+    "text": "¿Qué hace un mudo bailando? Una muda."
   },
   {
     "id": "chiste-018",
-    "text": "¿Cómo se llama el primo vegetariano de Bruce Lee? Broco Lee."
+    "text": "¿Por qué los pájaros no usan Facebook? Porque ya tienen Twitter."
   },
   {
     "id": "chiste-019",
-    "text": "¿Qué le dice una taza a otra? ¿Qué taza haciendo?"
+    "text": "¿Qué le dice un semáforo a otro? No me mires que me estoy cambiando."
   },
   {
     "id": "chiste-020",
-    "text": "¿Por qué el café fue a la policía? Porque lo habían molido."
+    "text": "¿Cómo se llama el primo vegano de Bruce Lee? Broco Lee."
+  },
+  {
+    "id": "chiste-021",
+    "text": "¿Qué hace una rata con una ametralladora? ¡Ratatatatatá!"
+  },
+  {
+    "id": "chiste-022",
+    "text": "¿Cuál es el colmo de un astronauta? Enfermarse de gravedad."
+  },
+  {
+    "id": "chiste-023",
+    "text": "¿Qué le dice un jardinero a otro? Nos vemos cuando podamos."
+  },
+  {
+    "id": "chiste-024",
+    "text": "¿Por qué las focas del circo miran siempre hacia arriba? Porque es donde están los focos."
+  },
+  {
+    "id": "chiste-025",
+    "text": "¿Qué es un punto verde en una esquina? Un guisante castigado."
+  },
+  {
+    "id": "chiste-026",
+    "text": "¿Qué es un punto rojo en una esquina? El mismo guisante aguantando la respiración."
+  },
+  {
+    "id": "chiste-027",
+    "text": "¿Cómo se dice pelo sucio en chino? Chin champú."
+  },
+  {
+    "id": "chiste-028",
+    "text": "¿Qué le dice una pared a otra pared? Nos vemos en la esquina."
+  },
+  {
+    "id": "chiste-029",
+    "text": "¿Cuál es el colmo de un libro? Que en otoño se le caigan las hojas."
+  },
+  {
+    "id": "chiste-030",
+    "text": "¿Qué hace un pez mago? Nada por aquí, nada por allá."
+  },
+  {
+    "id": "chiste-031",
+    "text": "¿Cómo se dice espejo en chino? Aitoiyo."
+  },
+  {
+    "id": "chiste-032",
+    "text": "¿Qué le dice un gusano a otro gusano? Voy a dar una vuelta a la manzana."
+  },
+  {
+    "id": "chiste-033",
+    "text": "¿Por qué el mar es azul? Porque los peces hacen blú, blú, blú."
+  },
+  {
+    "id": "chiste-034",
+    "text": "¿Cuál es el colmo de un calvo? Tener ideas descabelladas."
+  },
+  {
+    "id": "chiste-035",
+    "text": "¿Qué hace una vaca pensando? Hace leche concentrada."
+  },
+  {
+    "id": "chiste-036",
+    "text": "¿Cómo se llama el hermano pobre de Bill Gates? Sin Gates."
+  },
+  {
+    "id": "chiste-037",
+    "text": "¿Qué le dice un zapato a otro? ¡Qué vida más arrastrada llevamos!"
+  },
+  {
+    "id": "chiste-038",
+    "text": "¿Cuál es la fruta más divertida? La naranja ja, ja, ja."
+  },
+  {
+    "id": "chiste-039",
+    "text": "¿Qué le dice un árbol a otro? ¡Qué pasa tronco!"
+  },
+  {
+    "id": "chiste-040",
+    "text": "¿Cómo se dice autobús en alemán? Subanempujenestrujenbajen."
+  },
+  {
+    "id": "chiste-041",
+    "text": "¿Por qué el tomate no toma café? Porque toma té."
+  },
+  {
+    "id": "chiste-042",
+    "text": "¿Qué le dice una impresora a otra? ¿Esa hoja es tuya o es impresión mía?"
+  },
+  {
+    "id": "chiste-043",
+    "text": "¿Cuál es el colmo de un ciego? Llamarse Casimiro y vivir en el noveno B."
+  },
+  {
+    "id": "chiste-044",
+    "text": "¿Qué hace una gallina en una iglesia? Pío, pío."
+  },
+  {
+    "id": "chiste-045",
+    "text": "¿Cómo se dice diarrea en japonés? Kagasawa."
+  },
+  {
+    "id": "chiste-046",
+    "text": "¿Qué le dice un cable a otro cable? Somos los intocables."
+  },
+  {
+    "id": "chiste-047",
+    "text": "¿Por qué los esqueletos no pelean entre ellos? Porque no tienen agallas."
+  },
+  {
+    "id": "chiste-048",
+    "text": "¿Cuál es el colmo de un jardinero? Que siempre lo dejen plantado."
+  },
+  {
+    "id": "chiste-049",
+    "text": "¿Qué hace un perro en un coche? ¡Guau-toma-tic!"
+  },
+  {
+    "id": "chiste-050",
+    "text": "¿Cómo se llama el hermano vegetariano de Tarzán? Lechugán."
+  },
+  {
+    "id": "chiste-051",
+    "text": "¿Qué le dice una cuchara a un tenedor? No te pinches."
+  },
+  {
+    "id": "chiste-052",
+    "text": "¿Por qué está feliz la escoba? Porque ba-rriendo."
+  },
+  {
+    "id": "chiste-053",
+    "text": "¿Cuál es el colmo de un panadero? Tener un hijo que sea un bollo."
+  },
+  {
+    "id": "chiste-054",
+    "text": "¿Qué le dice el número 1 al número 10? Para ser como yo tienes que ser sincero."
+  },
+  {
+    "id": "chiste-055",
+    "text": "¿Cómo se dice naufragio en chino? Chin-chu-lancha."
+  },
+  {
+    "id": "chiste-056",
+    "text": "¿Qué hace una oveja en el polo norte? Tiene mucho frío, beeee."
+  },
+  {
+    "id": "chiste-057",
+    "text": "¿Cuál es el colmo de un fotógrafo? Que sus hijos se le revelen."
+  },
+  {
+    "id": "chiste-058",
+    "text": "¿Qué le dice un cero a otro cero? No somos nada."
+  },
+  {
+    "id": "chiste-059",
+    "text": "¿Por qué las cigüeñas duermen en una pata? Porque si levantaran las dos se caerían."
+  },
+  {
+    "id": "chiste-060",
+    "text": "¿Cómo se llama un boomerang que no vuelve? Palo."
+  },
+  {
+    "id": "chiste-061",
+    "text": "¿Qué le dice una taza a otra? ¿Qué taza ciendo?"
+  },
+  {
+    "id": "chiste-062",
+    "text": "¿Cuál es el colmo de un sastre? Tener un hijo botones y una hija perdida."
+  },
+  {
+    "id": "chiste-063",
+    "text": "¿Qué hace una piedra en el espacio? Nada, es un meteorito."
+  },
+  {
+    "id": "chiste-064",
+    "text": "¿Cómo se dice ascensor en árabe? Alí-ba-ba."
+  },
+  {
+    "id": "chiste-065",
+    "text": "¿Qué le dice un clavo a otro clavo? ¡Qué martillazo me han dado!"
+  },
+  {
+    "id": "chiste-066",
+    "text": "¿Por qué los elefantes no montan en bicicleta? Porque no tienen el dedo meñique para tocar el timbre."
+  },
+  {
+    "id": "chiste-067",
+    "text": "¿Cuál es el colmo de un carpintero? Tener una mujer cómoda y unos hijos listones."
+  },
+  {
+    "id": "chiste-068",
+    "text": "¿Qué hace un pato con una pata? Cojear."
+  },
+  {
+    "id": "chiste-069",
+    "text": "¿Cómo se llama el primo limpio de Hulk? Limpulk."
+  },
+  {
+    "id": "chiste-070",
+    "text": "¿Qué le dice un ojo al otro? Tan cerca y no nos vemos."
+  },
+  {
+    "id": "chiste-071",
+    "text": "¿Por qué el libro de historia estaba triste? Porque su pasado era muy oscuro."
+  },
+  {
+    "id": "chiste-072",
+    "text": "¿Cuál es el colmo de un músico? Que su mujer toque las narices."
+  },
+  {
+    "id": "chiste-073",
+    "text": "¿Qué hace un vampiro conduciendo un tractor? Siembra el pánico."
+  },
+  {
+    "id": "chiste-074",
+    "text": "¿Cómo se dice veterinario en inglés? Dog-tor."
+  },
+  {
+    "id": "chiste-075",
+    "text": "¿Qué le dice un mosquito a un grupo de niños? No aplaudan que todavía no es mi cumpleaños."
+  },
+  {
+    "id": "chiste-076",
+    "text": "¿Por qué la computadora fue al médico? Porque tenía un virus."
+  },
+  {
+    "id": "chiste-077",
+    "text": "¿Cuál es el colmo de un peluquero? Perder el tren por un pelo."
+  },
+  {
+    "id": "chiste-078",
+    "text": "¿Qué hace una pulga en la cabeza de un calvo? Patinar sobre hielo."
+  },
+  {
+    "id": "chiste-079",
+    "text": "¿Cómo se llama el campeón de salto de altura chino? Wan-ta-na-me-ra."
+  },
+  {
+    "id": "chiste-080",
+    "text": "¿Qué le dice una cereza a otra? ¿Ser esa tu hermana?"
+  },
+  {
+    "id": "chiste-081",
+    "text": "¿Por qué los peces no van a la escuela? Porque siempre están en bancos."
+  },
+  {
+    "id": "chiste-082",
+    "text": "¿Cuál es el colmo de un arquitecto? Construir castillos en el aire."
+  },
+  {
+    "id": "chiste-083",
+    "text": "¿Qué hace un perro con un teléfono? ¡Guau-tsApp!"
+  },
+  {
+    "id": "chiste-084",
+    "text": "¿Cómo se dice suegra en griego? Storbo."
+  },
+  {
+    "id": "chiste-085",
+    "text": "¿Qué le dice una bombilla a otra? ¡Tanto tiempo encendido y no me das ni las gracias!"
+  },
+  {
+    "id": "chiste-086",
+    "text": "¿Por qué el sol no va a la universidad? Porque ya tiene millones de grados."
+  },
+  {
+    "id": "chiste-087",
+    "text": "¿Cuál es el colmo de un policía? Que lo asalten las dudas."
+  },
+  {
+    "id": "chiste-088",
+    "text": "¿Qué hace una tortuga en una autopista? ¡A toda pastilla!"
+  },
+  {
+    "id": "chiste-089",
+    "text": "¿Cómo se llama el hermano pequeño de Pinocho? Pi-ocho."
+  },
+  {
+    "id": "chiste-090",
+    "text": "¿Qué le dice un ladrillo a otro? Hay un cemento entre nosotros."
+  },
+  {
+    "id": "chiste-091",
+    "text": "¿Por qué los fantasmas son malos mentirosos? Porque se les ve a través."
+  },
+  {
+    "id": "chiste-092",
+    "text": "¿Cuál es el colmo de un médico? Tener una hija que se llame Dolores."
+  },
+  {
+    "id": "chiste-093",
+    "text": "¿Qué hace un caballo en una cama? ¡Potro-narse!"
+  },
+  {
+    "id": "chiste-094",
+    "text": "¿Cómo se dice adiós en alemán? ¡Chau-chén!"
+  },
+  {
+	"id": "chiste-095",
+	"text": "¿Qué le dice una nube a otra? ¡Estoy hasta las nubes de ti!"
+  },
+  {
+	"id": "chiste-096",
+	"text": "¿Por qué las abejas tienen el pelo pegajoso? Porque usan panales."
+  },
+  {
+    "id": "chiste-097",
+	"text": "¿Cuál es el colmo de un relojero? Pasar el tiempo sin hacer nada."
+  },
+  {
+	"id": "chiste-098",
+	"text": "¿Qué hace un gato en una biblioteca? ¡Miau-leer!"
+  },
+  {
+	"id": "chiste-099",
+	"text": "¿Cómo se dice fin en japonés? Sa-ka-bó."
   }
 ]
