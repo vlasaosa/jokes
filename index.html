@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6ead8">
+  <title>Vamos a pasar un buen rato</title>
+  <style>
+    :root { color-scheme: light; --ink:#392b27; --muted:#78665c; --paper:#fffaf2; --accent:#a34f3e; --line:#ead9c6; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; padding:28px 16px; display:flex; justify-content:center; align-items:center;
+      font-family: Georgia, "Times New Roman", serif; color:var(--ink);
+      background:radial-gradient(circle at top, #fff8ec 0, #f1dfc8 75%); }
+    main { width:min(100%, 680px); }
+    .eyebrow { text-align:center; letter-spacing:.16em; text-transform:uppercase; font:600 11px/1.4 system-ui,sans-serif; color:var(--muted); }
+    h1 { text-align:center; font-size:clamp(2rem,7vw,3.3rem); line-height:1.05; margin:10px 0 26px; font-weight:600; }
+    .card { background:var(--paper); border:1px solid var(--line); border-radius:22px; padding:clamp(24px,6vw,42px);
+      box-shadow:0 18px 55px #6b49301c; }
+    #jokeBox { min-height:170px; display:grid; place-items:center; text-align:center; padding:20px 8px;
+      font-size:clamp(1.35rem,4.5vw,2rem); line-height:1.45; }
+    #jokeBox.final { font-style:italic; font-size:clamp(1.25rem,4vw,1.7rem); }
+    .actions { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:18px; }
+    button { border:0; border-radius:999px; padding:13px 20px; font:600 15px system-ui,sans-serif; cursor:pointer; transition:transform .15s,opacity .15s; }
+    button:hover:not(:disabled) { transform:translateY(-2px); }
+    button:focus-visible { outline:3px solid #d39a70; outline-offset:3px; }
+    button:disabled { opacity:.42; cursor:not-allowed; }
+    #nextBtn { background:var(--accent); color:white; padding-inline:25px; }
+    .vote { background:#f0e4d7; color:var(--ink); min-width:54px; font-size:19px; }
+    .vote[aria-pressed="true"] { background:#d9eadb; box-shadow:inset 0 0 0 2px #648c69; }
+    .vote.down[aria-pressed="true"] { background:#f4dddd; box-shadow:inset 0 0 0 2px #b56a6a; }
+    .vote-row { display:flex; align-items:center; justify-content:center; gap:10px; margin-top:16px; }
+    .vote-label { color:var(--muted); font:13px system-ui,sans-serif; }
+    .lists { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:20px; }
+    .list { border:1px solid var(--line); border-radius:16px; padding:15px; background:#fffdf9; min-width:0; }
+    .list h2 { font:600 14px system-ui,sans-serif; margin:0 0 10px; }
+    .list ul { padding-left:18px; margin:0; color:#59483f; font:13px/1.5 system-ui,sans-serif; overflow-wrap:anywhere; }
+    .list li+li { margin-top:7px; }
+    .count { color:var(--muted); font-weight:400; }
+    .note { text-align:center; color:var(--muted); font:12px/1.5 system-ui,sans-serif; margin:16px 8px 0; }
+    .error { color:#9c302d; font:14px system-ui,sans-serif; text-align:center; }
+    @media(max-width:520px) { .lists { grid-template-columns:1fr; } .card { padding:22px 18px; } }
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Un ratito para sonreír</div>
+  <h1>Vamos a pasar un buen rato</h1>
+  <section class="card" aria-live="polite">
+    <div id="jokeBox">Cargando chistes…</div>
+    <div class="actions">
+      <button id="nextBtn" type="button">Otro chiste, por favor</button>
+    </div>
+    <div class="vote-row" id="voteRow">
+      <span class="vote-label">¿Te ha gustado?</span>
+      <button class="vote" id="likeBtn" type="button" aria-label="Me ha gustado" aria-pressed="false">👍</button>
+      <button class="vote down" id="dislikeBtn" type="button" aria-label="No me ha gustado" aria-pressed="false">👎</button>
+    </div>
+  </section>
+  <section class="lists" aria-label="Tus valoraciones">
+    <div class="list"><h2>👍 Me han gustado <span class="count" id="likeCount">(0)</span></h2><ul id="likes"></ul></div>
+    <div class="list"><h2>👎 No me han gustado <span class="count" id="dislikeCount">(0)</span></h2><ul id="dislikes"></ul></div>
+  </section>
+  <p class="note">Tus valoraciones se guardan únicamente en este dispositivo y navegador.</p>
+</main>
+<script>
+(() => {
+  const STORAGE_KEY = "buen-rato-chistes-v1";
+  const box = document.getElementById("jokeBox");
+  const nextBtn = document.getElementById("nextBtn");
+  const likeBtn = document.getElementById("likeBtn");
+  const dislikeBtn = document.getElementById("dislikeBtn");
+  const voteRow = document.getElementById("voteRow");
+  let jokes = [];
+  let state = { seen: [], votes: {}, finished: false };
+  let current = null;
+
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    if (saved && Array.isArray(saved.seen) && saved.votes && typeof saved.votes === "object") {
+      state = { ...state, ...saved };
+    }
+  } catch (_) {}
+
+  function save() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+    catch (_) { /* Si el navegador bloquea el almacenamiento, la página sigue funcionando durante esta visita. */ }
+  }
+  function renderLists() {
+    const liked = Object.entries(state.votes).filter(([,v]) => v.vote === "up");
+    const disliked = Object.entries(state.votes).filter(([,v]) => v.vote === "down");
+    const fill = (id, entries) => {
+      const ul = document.getElementById(id); ul.replaceChildren();
+      entries.forEach(([jid, v]) => {
+        const joke = jokes.find(j => j.id === jid);
+        if (joke) { const li = document.createElement("li"); li.textContent = joke.text; ul.appendChild(li); }
+      });
+    };
+    fill("likes", liked); fill("dislikes", disliked);
+    document.getElementById("likeCount").textContent = `(${liked.length})`;
+    document.getElementById("dislikeCount").textContent = `(${disliked.length})`;
+  }
+  function finish() {
+    state.finished = true; save();
+    box.textContent = "Espero que te hayan sacado alguna sonrisa, besitos";
+    box.classList.add("final");
+    nextBtn.disabled = true; likeBtn.disabled = true; dislikeBtn.disabled = true;
+    nextBtn.textContent = "Se acabaron los chistes";
+  }
+  function showNext() {
+    if (state.finished) return;
+    const remaining = jokes.filter(j => !state.seen.includes(j.id));
+    if (!remaining.length) { finish(); return; }
+    current = remaining[Math.floor(Math.random() * remaining.length)];
+    state.seen.push(current.id); save();
+    box.textContent = current.text; box.classList.remove("final");
+    likeBtn.disabled = false; dislikeBtn.disabled = false;
+    likeBtn.setAttribute("aria-pressed", "false");
+    dislikeBtn.setAttribute("aria-pressed", "false");
+    const prior = state.votes[current.id]?.vote;
+    if (prior) {
+      likeBtn.setAttribute("aria-pressed", prior === "up" ? "true" : "false");
+      dislikeBtn.setAttribute("aria-pressed", prior === "down" ? "true" : "false");
+    }
+  }
+  function vote(value) {
+    if (!current || state.finished) return;
+    state.votes[current.id] = { vote:value };
+    save(); renderLists();
+    likeBtn.setAttribute("aria-pressed", value === "up" ? "true" : "false");
+    dislikeBtn.setAttribute("aria-pressed", value === "down" ? "true" : "false");
+  }
+  nextBtn.addEventListener("click", showNext);
+  likeBtn.addEventListener("click", () => vote("up"));
+  dislikeBtn.addEventListener("click", () => vote("down"));
+
+  fetch("./jokes.json")
+    .then(r => { if (!r.ok) throw new Error("No se ha podido cargar jokes.json"); return r.json(); })
+    .then(data => {
+      if (!Array.isArray(data) || data.some(j => !j.id || !j.text)) throw new Error("El JSON de chistes no tiene el formato esperado.");
+      jokes = data;
+      renderLists();
+      if (state.finished || jokes.every(j => state.seen.includes(j.id))) finish();
+      else showNext();
+    })
+    .catch(err => {
+      box.innerHTML = "";
+      const p = document.createElement("p"); p.className = "error";
+      p.textContent = "No se ha podido cargar el banco de chistes. Comprueba que jokes.json esté junto a index.html y que la página esté publicada en un servidor web.";
+      box.appendChild(p);
+      nextBtn.disabled = true; likeBtn.disabled = true; dislikeBtn.disabled = true;
+      console.error(err);
+    });
+})();
+</script>
+</body>
+</html>
